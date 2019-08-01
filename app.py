@@ -40,21 +40,23 @@ def user_info(user_id):
 @app.route('/add/vehicle/<vehicle_number>', methods=['POST'])
 def vehicle_add(vehicle_number):
     incoming_data = request.json
-    print (incoming_data)
-    print (incoming_data['First Name'])
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(vehicle_number)
 
-@app.route('/add/dealer/<dealer_id>', methods=['GET'])
+@app.route('/add/dealer/<dealer_id>', methods=['POST'])
 def dealer_add(dealer_id):
+    incoming_data = request.json
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(dealer_id)
 
-@app.route('/add/insurance/<insurance_id>', methods=['GET'])
+@app.route('/add/insurance/<insurance_id>', methods=['POST'])
 def insurance_add(insurance_id):
+    incoming_data = request.json
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(insurance_id)
 
-@app.route('/add/user/<user_id>', methods=['GET'])
+@app.route('/add/user/<user_id>', methods=['POST'])
 def user_add(user_id):
+    incoming_data = request.json
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(user_id)
+
 
 # Application Deployment Phase
 
