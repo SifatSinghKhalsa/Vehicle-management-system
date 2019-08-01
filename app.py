@@ -1,4 +1,5 @@
 from flask import Flask, jsonify, make_response, flash, request, redirect, render_template
+import json
 
 app = Flask(__name__)
 
@@ -36,8 +37,11 @@ def user_info(user_id):
 
 # Adding Information Fields to Database
 
-@app.route('/add/vehicle/<vehicle_number>', methods=['GET'])
+@app.route('/add/vehicle/<vehicle_number>', methods=['POST'])
 def vehicle_add(vehicle_number):
+    incoming_data = request.json
+    print (incoming_data)
+    print (incoming_data['First Name'])
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(vehicle_number)
 
 @app.route('/add/dealer/<dealer_id>', methods=['GET'])
