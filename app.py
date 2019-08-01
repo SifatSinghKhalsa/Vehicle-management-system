@@ -2,6 +2,8 @@ from flask import Flask, jsonify, make_response, flash, request, redirect, rende
 
 app = Flask(__name__)
 
+# Homepage API routing
+
 @app.route('/')
 def index():
     return "Vehicle Management API is active"
@@ -29,7 +31,7 @@ def insurance_info(insurance_id):
     return "You're Trying to Access Insurance Information Records for Insurance ID {}".format(insurance_id)
 
 @app.route('/info/user/<user_id>', methods=['GET'])
-def insurance_info(user_id):
+def user_info(user_id):
     return "You're Trying to Access User Information Records for User ID {}".format(user_id)
 
 # Adding Information Fields to Database
@@ -50,6 +52,7 @@ def insurance_add(insurance_id):
 def user_add(user_id):
     return "You're Trying to Access Maintence Records for Vehicle Number {}".format(user_id)
 
+# Application Deployment Phase
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0',port='5000')
