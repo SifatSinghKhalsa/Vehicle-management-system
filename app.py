@@ -26,5 +26,9 @@ def dealer_info(dealer_id):
 def insurance_info(insurance_id):
     return "You're Trying to Access Insurance Information Records for Insurance ID {}".format(insurance_id)
 
+@app.route('/user/<user_id>', methods=['GET'])
+def insurance_info(user_id):
+    return "You're Trying to Access User Information Records for User ID {}".format(user_id)
+
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0',port='5000')
